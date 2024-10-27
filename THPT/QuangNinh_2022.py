@@ -30,5 +30,42 @@ for i in range(len(arr)):
 """
 
 # Bài 2
+"""
+s1 = input()
+s2 = input()
 
+lenList = []
+
+for i in range(1, len(s2)):
+    p1 = s1.find(s2[i-1])
+    p2 = s1.rfind(s2[i])
+    lenList.append(p2-p1)
+print(lenList)
+"""
+
+# Bài 3
+"""
+result = []
+def backtrack(arr, newArr, index, total):
+    #print(total)
+    global result
+    if total == 10:
+        result.append(newArr.copy())
+        return
+    if total > 10:
+        return
+    if index >= len(arr):
+        return
+
+    newArr.append(arr[index])
+    backtrack(arr, newArr, index+1, total + arr[index])
+    newArr.pop()
+
+    backtrack(arr, newArr, index+1, total)
+
+arr = [4, 7, 5, 1, 3]
+
+backtrack(arr, [], 0, 0)
+print(result)
+"""
 
