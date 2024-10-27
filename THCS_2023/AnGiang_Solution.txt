@@ -66,3 +66,21 @@ int main()
 	cout << str[str.length() - 1 - p];
 }
 
+/// B3: Sort từ lớn về bé
+
+#include <iostream>
+#include <string>
+#include <math.h>
+#include <algorithm>
+
+using namespace std;
+
+int main()
+{
+	int a[5] = { 1, 3, 2, 4, 5 };
+	sort(a, a + 5, greater<int>());
+	for (int i = 0; i < 5; i++)
+	{
+		cout << a[i] << endl;
+	}
+}
