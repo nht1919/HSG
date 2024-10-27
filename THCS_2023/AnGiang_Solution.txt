@@ -1,0 +1,32 @@
+//===============Đề An Giang================//
+#include <iostream>
+#include <string>
+#include <math.h>
+
+using namespace std;
+
+#define ll long long int 
+
+bool soChinhPhuong(ll n)
+{
+	return (long long int(sqrt(n)) * long long int(sqrt(n)) == n);
+}
+
+int main()
+{
+	int x;
+	//cout << soChinhPhuong(36) << endl;
+	//cout << soChinhPhuong(37) << endl;
+	//return 0;
+	cin >> x;
+	ll a1 = pow(10, x-1) / 45;
+	ll a2 = (pow(10, x) - 1) / 45;
+	for (ll i = a2; i >= a1; i--)
+	{
+		if (soChinhPhuong(i * 45))
+		{
+			cout << i * 45;
+			break;
+		}
+	}
+}
